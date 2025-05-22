@@ -1,0 +1,18 @@
+﻿{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:base"],
+    "enabled": true,
+    "enabledManagers": ["gomod"],
+    "packageRules": [
+      {
+        "matchManagers": ["gomod"],
+        "matchPackagePatterns": [".*"],
+        "matchUpdateTypes": ["major", "minor", "patch"],
+        "vulnerabilityAlertsOnly": true,
+        "enabled": true,
+        "prCreation": "immediate"
+      }
+    ],
+    "labels": ["dependencies", "security"],
+    "commitMessagePrefix": "fix(deps): "
+}
